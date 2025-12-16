@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>38760dd1-2c8c-4b2a-ba89-8ad7927e56e2</groupId>
+        <artifactId>sproutsocial-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>38760dd1-2c8c-4b2a-ba89-8ad7927e56e2</groupId>
+    <artifactId>sproutsocial-connectivity-model</artifactId>
+    <name>sproutsocial-connectivity-model</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>dw-library</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mulesoft.connectivity</groupId>
+            <artifactId>connectivity-language</artifactId>
+            <classifier>dw-library</classifier>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,20 @@
+{
+  "name": "sproutsocial-anypoint-connector-model",
+  "classLoaderModelLoaderDescriptor": {
+    "attributes": {},
+    "id": "mule"
+  },
+  "requiredProduct": "MULE_EE",
+  "minMuleVersion": "4.10.0",
+  "extensionModelLoaderDescriptor": {
+    "attributes": {
+      "modulePath": "META-INF/sproutsocial.ic",
+      "version": "1.0.2-SNAPSHOT"
+    },
+    "id": "interpreted-connectivity"
+  },
+  "bundleDescriptorLoader": {
+    "attributes": {},
+    "id": "mule"
+  }
+}

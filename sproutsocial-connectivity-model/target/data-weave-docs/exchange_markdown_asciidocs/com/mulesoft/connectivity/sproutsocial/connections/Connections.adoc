@@ -1,0 +1,42 @@
+==== _com::mulesoft::connectivity::sproutsocial::connections::Connections_
+__________________________________________
+
+
+
+= Index
+
+
+=== Variables
+[%header, cols="1,3"]
+|===
+| Name | Description
+| link:#bearerauth-index [BearerAuth] | 
+| link:#test-index [test] | 
+|===
+
+
+
+
+
+
+__________________________________________
+
+
+
+
+
+= Variables
+
+== **BearerAuth** link:#index [↑↑]
+
+
+
+
+== **test** link:#index [↑↑]
+
+
+
+
+
+
+

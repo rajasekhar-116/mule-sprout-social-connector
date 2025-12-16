@@ -1,0 +1,4 @@
+OPERATION NAME       STATUS           MESSAGE                                                                                                                   
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+getCustomerIds       PARTIAL_SUCCESS  Missing CREATE and DELETE operation - Self sustained testcase not generated - Both Resource CREATION and DELETION needed  
+getCustomerProfiles  PARTIAL_SUCCESS  Missing CREATE and DELETE operation - Self sustained testcase not generated - Both Resource CREATION and DELETION needed  

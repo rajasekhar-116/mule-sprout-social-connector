@@ -1,0 +1,43 @@
+{
+  "name": "/v1/metadata/client tests",
+  "time": 28,
+  "status": "OK",
+  "tests": [
+    {
+      "name": "/v1/metadata/client - GET Successful Execution",
+      "time": 16,
+      "status": "OK",
+      "errorMessage": "",
+      "location": {
+        "start": {
+          "index": 774,
+          "line": 34,
+          "column": 5
+        },
+        "end": {
+          "index": 822,
+          "line": 34,
+          "column": 53
+        },
+        "locationString": "\n34|     \"/v1/metadata/client - GET Successful Execution\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - GET Successful Execution\" in do {",
+        "sourceIdentifier": "saas::negative::IT_v1_metadata_client_get_600_Test"
+      }
+    }
+  ],
+  "location": {
+    "start": {
+      "index": 728,
+      "line": 33,
+      "column": 1
+    },
+    "end": {
+      "index": 755,
+      "line": 33,
+      "column": 28
+    },
+    "locationString": "\n33| \"/v1/metadata/client tests\" describedBy [\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "text": "\"/v1/metadata/client tests\" describedBy [",
+    "sourceIdentifier": "saas::negative::IT_v1_metadata_client_get_600_Test"
+  }
+}

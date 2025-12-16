@@ -1,0 +1,43 @@
+{
+  "name": "/v1/{customerId}/metadata/customer tests",
+  "time": 36,
+  "status": "OK",
+  "tests": [
+    {
+      "name": "/v1/{customerId}/metadata/customer - GET Successful Execution",
+      "time": 4,
+      "status": "OK",
+      "errorMessage": "",
+      "location": {
+        "start": {
+          "index": 922,
+          "line": 37,
+          "column": 5
+        },
+        "end": {
+          "index": 985,
+          "line": 37,
+          "column": 68
+        },
+        "locationString": "\n37|     \"/v1/{customerId}/metadata/customer - GET Successful Execution\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/{customerId}/metadata/customer - GET Successful Execution\" in do {",
+        "sourceIdentifier": "saas::negative::IT_v1__customerId__metadata_customer_get_600_Test"
+      }
+    }
+  ],
+  "location": {
+    "start": {
+      "index": 861,
+      "line": 36,
+      "column": 1
+    },
+    "end": {
+      "index": 903,
+      "line": 36,
+      "column": 43
+    },
+    "locationString": "\n36| \"/v1/{customerId}/metadata/customer tests\" describedBy [\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "text": "\"/v1/{customerId}/metadata/customer tests\" describedBy [",
+    "sourceIdentifier": "saas::negative::IT_v1__customerId__metadata_customer_get_600_Test"
+  }
+}

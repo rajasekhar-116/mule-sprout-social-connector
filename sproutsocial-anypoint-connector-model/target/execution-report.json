@@ -1,0 +1,19 @@
+{
+  "groupId": "38760dd1-2c8c-4b2a-ba89-8ad7927e56e2",
+  "artifactId": "sproutsocial-anypoint-connector-model",
+  "version": "1.0.2-SNAPSHOT",
+  "name": "sproutsocial-anypoint-connector-model",
+  "status": "SUCCESS",
+  "phasesSummary": {
+    "VALIDATE": {
+      "phaseName": "VALIDATE",
+      "status": "SUCCESS",
+      "messages": {}
+    },
+    "PACKAGE": {
+      "phaseName": "PACKAGE",
+      "status": "SUCCESS",
+      "messages": {}
+    }
+  }
+}

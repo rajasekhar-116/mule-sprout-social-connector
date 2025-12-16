@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<testsuites tests="4" time="137" name="/v1/{customerId}/metadata/customer tests" failures="0" errors="0">
+  <testsuite tests="4" time="137" name="/v1/{customerId}/metadata/customer tests" failures="0" skipped="0" errors="0">
+    <testcase name="/v1/{customerId}/metadata/customer - GET Successful Execution with Dynamic Customer ID" time="8" status="OK"/>
+    <testcase name="/v1/{customerId}/metadata/customer - Validates Response Structure" time="2" status="OK"/>
+    <testcase name="/v1/{customerId}/metadata/customer - Each Profile Has Required Fields" time="5" status="OK"/>
+    <testcase name="/v1/{customerId}/metadata/customer - Network Type Is Valid" time="47" status="OK"/>
+  </testsuite>
+</testsuites>

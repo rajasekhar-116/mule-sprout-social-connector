@@ -1,0 +1,333 @@
+openapi: 3.0.3
+info:
+  title: Sprout Social API
+  description: |
+    The Sprout Social API provides access to your owned social profile data so you can use that data to power dashboards and automate your reporting.
+    
+    This specification covers endpoints for retrieving customer profiles available to your account.
+  version: 1.0.0
+  contact:
+    name: Sprout Social API Support
+    url: https://api.sproutsocial.com/docs/
+  license:
+    name: Sprout Social API Terms of Service
+    url: https://sproutsocial.com/legal/api-terms-of-service/
+
+servers:
+  - url: https://api.sproutsocial.com
+    description: Sprout Social API Production Server
+
+security:
+  - BearerAuth: []
+
+paths:
+  /v1/metadata/client:
+    get:
+      summary: Get Customer IDs and Names
+      description: |
+        This endpoint is used to obtain the customer IDs and names you have access to.
+        This endpoint can also serve as a connectivity test as it requires no parameters other than authentication.
+      operationId: getCustomerIds
+      tags:
+        - Customer Metadata
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved customer IDs and names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        customer_id:
+                          type: integer
+                          description: The customer ID used by Sprout to identify this customer
+                          example: 687751
+                        name:
+                          type: string
+                          description: The name of the customer/business
+                          example: "My Business"
+                      required:
+                        - customer_id
+                        - name
+              example:
+                data:
+                  - customer_id: 687751
+                    name: "My Business"
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /v1/{customerId}/metadata/customer:
+    get:
+      summary: Get Customer Profiles
+      description: |
+        This endpoint is used to obtain the list of customer profile IDs you have access to for a specific customer.
+        Returns detailed information about social network profiles available to that customer.
+      operationId: getCustomerProfiles
+      tags:
+        - Customer Metadata
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          description: The customer ID obtained from the /v1/metadata/client endpoint
+          schema:
+            type: integer
+          example: 687751
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved customer profiles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        customer_profile_id:
+                          type: integer
+                          description: The customer profile ID used by Sprout to identify this social network profile
+                          example: 492
+                        network_type:
+                          type: string
+                          description: The type of social network (X, Facebook, Instagram, etc.)
+                          example: "twitter"
+                          enum:
+                            - twitter
+                            - facebook
+                            - instagram
+                            - linkedin
+                            - youtube
+                            - pinterest
+                            - tiktok
+                            - google_my_business
+                            - whatsapp
+                            - threads
+                            - bluesky
+                        name:
+                          type: string
+                          description: The human-facing name of the social network profile
+                          example: "Sprout Social"
+                        native_name:
+                          type: string
+                          description: The user name, screen name, page URL, etc. the social network uses to identify a unique profile
+                          example: "sproutsocial"
+                        native_id:
+                          type: string
+                          description: The ID used by the social network to identify a unique profile
+                          example: "42793960"
+                        groups:
+                          type: array
+                          items:
+                            type: integer
+                          description: An array of group IDs this profile belongs to
+                          example: [23598, 65245]
+                      required:
+                        - customer_profile_id
+                        - network_type
+                        - name
+                        - native_name
+                        - native_id
+              example:
+                data:
+                  - customer_profile_id: 492
+                    network_type: "twitter"
+                    name: "Sprout Social"
+                    native_name: "sproutsocial"
+                    native_id: "42793960"
+                    groups: [23598, 65245]
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        Bearer token authentication using either:
+        1. OAuth 2.0 JWT access token (recommended)
+        2. API token
+        
+        To obtain an OAuth access token, use the client credentials flow with your client ID and secret.
+        To obtain an API token, generate one from the Sprout Social settings page.
+
+  responses:
+    BadRequest:
+      description: Bad Request - The request is malformed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "The request is malformed and does not conform with the request bodies specified in this document."
+      headers:
+        X-Sprout-Request-ID:
+          schema:
+            type: string
+          description: Randomly generated UUID to trace a client request and response
+        X-Sprout-API-Version:
+          schema:
+            type: string
+          description: Major and minor version of the response
+        X-Sprout-Server-Version:
+          schema:
+            type: string
+          description: Server version, including the major, minor, and build number
+
+    Unauthorized:
+      description: Unauthorized - Invalid or expired access token
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "The request does not contain a valid access token or that access token has expired."
+      headers:
+        X-Sprout-Request-ID:
+          schema:
+            type: string
+          description: Randomly generated UUID to trace a client request and response
+        X-Sprout-API-Version:
+          schema:
+            type: string
+          description: Major and minor version of the response
+        X-Sprout-Server-Version:
+          schema:
+            type: string
+          description: Server version, including the major, minor, and build number
+
+    Forbidden:
+      description: Forbidden - Access to customer or profile data not allowed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "The request is accessing customer or profile data that the client is not allowed access to."
+      headers:
+        X-Sprout-Request-ID:
+          schema:
+            type: string
+          description: Randomly generated UUID to trace a client request and response
+        X-Sprout-API-Version:
+          schema:
+            type: string
+          description: Major and minor version of the response
+        X-Sprout-Server-Version:
+          schema:
+            type: string
+          description: Server version, including the major, minor, and build number
+
+    NotFound:
+      description: Not Found - The requested endpoint does not exist
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "The client is requesting an endpoint that does not exist."
+      headers:
+        X-Sprout-Request-ID:
+          schema:
+            type: string
+          description: Randomly generated UUID to trace a client request and response
+        X-Sprout-API-Version:
+          schema:
+            type: string
+          description: Major and minor version of the response
+        X-Sprout-Server-Version:
+          schema:
+            type: string
+          description: Server version, including the major, minor, and build number
+
+    TooManyRequests:
+      description: Too Many Requests - Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "The client is making requests too quickly or has exhausted the allowed requests in a month."
+      headers:
+        X-Sprout-Request-ID:
+          schema:
+            type: string
+          description: Randomly generated UUID to trace a client request and response
+        X-Sprout-API-Version:
+          schema:
+            type: string
+          description: Major and minor version of the response
+        X-Sprout-Server-Version:
+          schema:
+            type: string
+          description: Server version, including the major, minor, and build number
+
+    InternalServerError:
+      description: Internal Server Error - Server had an issue processing the request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "The server had an issue processing the request."
+      headers:
+        X-Sprout-Request-ID:
+          schema:
+            type: string
+          description: Randomly generated UUID to trace a client request and response
+        X-Sprout-API-Version:
+          schema:
+            type: string
+          description: Major and minor version of the response
+        X-Sprout-Server-Version:
+          schema:
+            type: string
+          description: Server version, including the major, minor, and build number
+
+tags:
+  - name: Customer Metadata
+    description: |
+      Customer Metadata endpoints provide high-level information about your Sprout customer account 
+      and profiles you have access to. These endpoints provide data needed to make requests to other 
+      Sprout API endpoints.

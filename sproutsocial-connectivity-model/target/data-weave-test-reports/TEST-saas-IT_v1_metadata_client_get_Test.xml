@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<testsuites tests="6" time="388" name="/v1/metadata/client tests" failures="0" errors="0">
+  <testsuite tests="6" time="388" name="/v1/metadata/client tests" failures="0" skipped="0" errors="0">
+    <testcase name="/v1/metadata/client - GET Successful Execution" time="52" status="OK"/>
+    <testcase name="/v1/metadata/client - Response Contains Data Array" time="5" status="OK"/>
+    <testcase name="/v1/metadata/client - Each Customer Has Required Fields" time="11" status="OK"/>
+    <testcase name="/v1/metadata/client - Customer Has Name Field" time="5" status="OK"/>
+    <testcase name="/v1/metadata/client - Customer ID Is Integer" time="4" status="OK"/>
+    <testcase name="/v1/metadata/client - Customer Name Is String" time="3" status="OK"/>
+  </testsuite>
+</testsuites>

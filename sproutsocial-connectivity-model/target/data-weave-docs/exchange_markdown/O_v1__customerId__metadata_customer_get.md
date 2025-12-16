@@ -1,0 +1,63 @@
+#### _com::mulesoft::connectivity::sproutsocial::operations::O_v1__customerId__metadata_customer_get_
+__________________________________________
+
+
+
+# Index
+
+
+### Variables
+| Name | Description|
+|------|------------|
+| [O_v1__customerId__metadata_customer_get](#o_v1__customerid__metadata_customer_get-index ) | |
+
+
+
+### Types
+| Name | Description|
+|------|------------|
+|[O_v1__customerId__metadata_customer_get_Type](#o_v1__customerid__metadata_customer_get_type-index ) | |
+
+
+
+
+
+
+__________________________________________
+
+
+
+
+
+# Variables
+
+## **O_v1__customerId__metadata_customer_get** [↑↑](#index )
+
+
+
+
+
+__________________________________________
+
+# Types
+
+### **O_v1__customerId__metadata_customer_get_Type** [↑↑](#index )
+
+
+
+
+#### Definition
+
+```dataweave
+{ "200": HttpResponse<{ data?: Array<{ customer_profile_id: @Description(value = "The customer profile ID used by Sprout to identify this social network profile")
+Integer, network_type: @Description(value = "The type of social network (X, Facebook, Instagram, etc.)")
+"twitter" | "facebook" | "instagram" | "linkedin" | "youtube" | "pinterest" | "tiktok" | "google_my_business" | "whatsapp" | "threads" | "bluesky", name: @Description(value = "The human-facing name of the social network profile")
+String, native_name: @Description(value = "The user name, screen name, page URL, etc. the social network uses to identify a unique profile")
+String, native_id: @Description(value = "The ID used by the social network to identify a unique profile")
+String, groups?: @Description(value = "An array of group IDs this profile belongs to")
+Array<Integer> }> }>, "400": HttpResponse<{ error?: String }>, "401": HttpResponse<{ error?: String }>, "403": HttpResponse<{ error?: String }>, "404": HttpResponse<{ error?: String }>, "429": HttpResponse<{ error?: String }>, "500": HttpResponse<{ error?: String }>, errorResponse: ResultFailure<O_v1__customerId__metadata_customer_get_Type."400", Error<"400", "CLIENT_ERROR">> | ResultFailure<O_v1__customerId__metadata_customer_get_Type."401", Error<"401", "CLIENT_ERROR">> | ResultFailure<O_v1__customerId__metadata_customer_get_Type."403", Error<"403", "CLIENT_ERROR">> | ResultFailure<O_v1__customerId__metadata_customer_get_Type."404", Error<"404", "CLIENT_ERROR">> | ResultFailure<O_v1__customerId__metadata_customer_get_Type."429", Error<"429", "CLIENT_ERROR">> | ResultFailure<O_v1__customerId__metadata_customer_get_Type."500", Error<"500", "SERVER_ERROR">> | ResultFailure<HttpResponse<Any>, UnexpectedError>, request: HttpRequestType<{| uri: {| customerId: Integer |}, query: Object, headers: Object, cookie: Object |}>, response: O_v1__customerId__metadata_customer_get_Type."200" }
+```
+
+
+
+

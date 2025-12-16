@@ -1,0 +1,106 @@
+{
+  "name": "/v1/{customerId}/metadata/customer tests",
+  "time": 137,
+  "status": "OK",
+  "tests": [
+    {
+      "name": "/v1/{customerId}/metadata/customer - GET Successful Execution with Dynamic Customer ID",
+      "time": 8,
+      "status": "OK",
+      "errorMessage": "",
+      "location": {
+        "start": {
+          "index": 1458,
+          "line": 29,
+          "column": 5
+        },
+        "end": {
+          "index": 1546,
+          "line": 29,
+          "column": 93
+        },
+        "locationString": "\n29|     \"/v1/{customerId}/metadata/customer - GET Successful Execution with Dynamic Customer ID\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/{customerId}/metadata/customer - GET Successful Execution with Dynamic Customer ID\" in do {",
+        "sourceIdentifier": "saas::IT_v1__customerId__metadata_customer_get_Test"
+      }
+    },
+    {
+      "name": "/v1/{customerId}/metadata/customer - Validates Response Structure",
+      "time": 2,
+      "status": "OK",
+      "errorMessage": "Expected value to be Array type but was Array. From `V_v1__customerId__metadata_customer_get_response.value.body.data must beArray()` at line 33 of IT_v1__customerId__metadata_customer_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 1654,
+          "line": 32,
+          "column": 5
+        },
+        "end": {
+          "index": 1721,
+          "line": 32,
+          "column": 72
+        },
+        "locationString": "\n32|     \"/v1/{customerId}/metadata/customer - Validates Response Structure\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/{customerId}/metadata/customer - Validates Response Structure\" in do {",
+        "sourceIdentifier": "saas::IT_v1__customerId__metadata_customer_get_Test"
+      }
+    },
+    {
+      "name": "/v1/{customerId}/metadata/customer - Each Profile Has Required Fields",
+      "time": 5,
+      "status": "OK",
+      "errorMessage": "Expected {\n  customer_profile_id: 7044332,\n  network_type: \"fb_instagram_account\",\n  name: \"Market Financial Solutions\",\n  native_name: \"mfs_bridging\",\n  link: \"https://instagram.com/mfs_bridging\",\n  native_id: \"17841449371039543\",\n  groups: [\n    2570950\n  ]\n} to contain key customer_profile_id. From `V_v1__customerId__metadata_customer_get_response.value.body.data[0] must haveKey(\"customer_profile_id\")` at line 37 of IT_v1__customerId__metadata_customer_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 1829,
+          "line": 35,
+          "column": 5
+        },
+        "end": {
+          "index": 1900,
+          "line": 35,
+          "column": 76
+        },
+        "locationString": "\n35|     \"/v1/{customerId}/metadata/customer - Each Profile Has Required Fields\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/{customerId}/metadata/customer - Each Profile Has Required Fields\" in do {",
+        "sourceIdentifier": "saas::IT_v1__customerId__metadata_customer_get_Test"
+      }
+    },
+    {
+      "name": "/v1/{customerId}/metadata/customer - Network Type Is Valid",
+      "time": 47,
+      "status": "OK",
+      "errorMessage": "Expected value to be one of [\n  \"twitter\", \n  \"facebook\", \n  \"instagram\", \n  \"linkedin\", \n  \"youtube\", \n  \"pinterest\", \n  \"tiktok\", \n  \"google_my_business\", \n  \"whatsapp\", \n  \"threads\", \n  \"bluesky\", \n  \"fb_instagram_account\"\n] but was \"fb_instagram_account\". From `V_v1__customerId__metadata_customer_get_response.value.body.data[0].network_type must beOneOf([\"twitter\", \"facebook\", \"instagram\", \"linkedin\", \"youtube\", \"pinterest\", \"tiktok\", \"google_my_business\", \"whatsapp\", \"threads\", \"bluesky\", \"fb_instagram_account\"])` at line 43 of IT_v1__customerId__metadata_customer_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 2173,
+          "line": 41,
+          "column": 5
+        },
+        "end": {
+          "index": 2233,
+          "line": 41,
+          "column": 65
+        },
+        "locationString": "\n41|     \"/v1/{customerId}/metadata/customer - Network Type Is Valid\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/{customerId}/metadata/customer - Network Type Is Valid\" in do {",
+        "sourceIdentifier": "saas::IT_v1__customerId__metadata_customer_get_Test"
+      }
+    }
+  ],
+  "location": {
+    "start": {
+      "index": 1397,
+      "line": 28,
+      "column": 1
+    },
+    "end": {
+      "index": 1439,
+      "line": 28,
+      "column": 43
+    },
+    "locationString": "\n28| \"/v1/{customerId}/metadata/customer tests\" describedBy [\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "text": "\"/v1/{customerId}/metadata/customer tests\" describedBy [",
+    "sourceIdentifier": "saas::IT_v1__customerId__metadata_customer_get_Test"
+  }
+}

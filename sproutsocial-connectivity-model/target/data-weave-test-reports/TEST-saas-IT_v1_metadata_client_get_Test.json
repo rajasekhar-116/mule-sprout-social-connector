@@ -1,0 +1,148 @@
+{
+  "name": "/v1/metadata/client tests",
+  "time": 388,
+  "status": "OK",
+  "tests": [
+    {
+      "name": "/v1/metadata/client - GET Successful Execution",
+      "time": 52,
+      "status": "OK",
+      "errorMessage": "",
+      "location": {
+        "start": {
+          "index": 622,
+          "line": 17,
+          "column": 5
+        },
+        "end": {
+          "index": 670,
+          "line": 17,
+          "column": 53
+        },
+        "locationString": "\n17|     \"/v1/metadata/client - GET Successful Execution\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - GET Successful Execution\" in do {",
+        "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+      }
+    },
+    {
+      "name": "/v1/metadata/client - Response Contains Data Array",
+      "time": 5,
+      "status": "OK",
+      "errorMessage": "Expected value to be Array type but was Array. From `V_v1_metadata_client_get_response.value.body.data must beArray()` at line 21 of IT_v1_metadata_client_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 763,
+          "line": 20,
+          "column": 5
+        },
+        "end": {
+          "index": 815,
+          "line": 20,
+          "column": 57
+        },
+        "locationString": "\n20|     \"/v1/metadata/client - Response Contains Data Array\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - Response Contains Data Array\" in do {",
+        "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+      }
+    },
+    {
+      "name": "/v1/metadata/client - Each Customer Has Required Fields",
+      "time": 11,
+      "status": "OK",
+      "errorMessage": "Expected {\n  customer_id: 2628442,\n  name: \"MFS UK\"\n} to contain key customer_id. From `V_v1_metadata_client_get_response.value.body.data[0] must haveKey(\"customer_id\")` at line 25 of IT_v1_metadata_client_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 908,
+          "line": 23,
+          "column": 5
+        },
+        "end": {
+          "index": 965,
+          "line": 23,
+          "column": 62
+        },
+        "locationString": "\n23|     \"/v1/metadata/client - Each Customer Has Required Fields\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - Each Customer Has Required Fields\" in do {",
+        "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+      }
+    },
+    {
+      "name": "/v1/metadata/client - Customer Has Name Field",
+      "time": 5,
+      "status": "OK",
+      "errorMessage": "Expected {\n  customer_id: 2628442,\n  name: \"MFS UK\"\n} to contain key name. From `V_v1_metadata_client_get_response.value.body.data[0] must haveKey(\"name\")` at line 31 of IT_v1_metadata_client_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 1200,
+          "line": 29,
+          "column": 5
+        },
+        "end": {
+          "index": 1247,
+          "line": 29,
+          "column": 52
+        },
+        "locationString": "\n29|     \"/v1/metadata/client - Customer Has Name Field\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - Customer Has Name Field\" in do {",
+        "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+      }
+    },
+    {
+      "name": "/v1/metadata/client - Customer ID Is Integer",
+      "time": 4,
+      "status": "OK",
+      "errorMessage": "Expected value to be Number type but was Number. From `V_v1_metadata_client_get_response.value.body.data[0].customer_id must beNumber()` at line 37 of IT_v1_metadata_client_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 1475,
+          "line": 35,
+          "column": 5
+        },
+        "end": {
+          "index": 1521,
+          "line": 35,
+          "column": 51
+        },
+        "locationString": "\n35|     \"/v1/metadata/client - Customer ID Is Integer\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - Customer ID Is Integer\" in do {",
+        "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+      }
+    },
+    {
+      "name": "/v1/metadata/client - Customer Name Is String",
+      "time": 3,
+      "status": "OK",
+      "errorMessage": "Expected value to be String type but was String. From `V_v1_metadata_client_get_response.value.body.data[0].name must beString()` at line 43 of IT_v1_metadata_client_get_Test.dwl.",
+      "location": {
+        "start": {
+          "index": 1756,
+          "line": 41,
+          "column": 5
+        },
+        "end": {
+          "index": 1803,
+          "line": 41,
+          "column": 52
+        },
+        "locationString": "\n41|     \"/v1/metadata/client - Customer Name Is String\" in do {\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "text": "\"/v1/metadata/client - Customer Name Is String\" in do {",
+        "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+      }
+    }
+  ],
+  "location": {
+    "start": {
+      "index": 576,
+      "line": 16,
+      "column": 1
+    },
+    "end": {
+      "index": 603,
+      "line": 16,
+      "column": 28
+    },
+    "locationString": "\n16| \"/v1/metadata/client tests\" describedBy [\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "text": "\"/v1/metadata/client tests\" describedBy [",
+    "sourceIdentifier": "saas::IT_v1_metadata_client_get_Test"
+  }
+}

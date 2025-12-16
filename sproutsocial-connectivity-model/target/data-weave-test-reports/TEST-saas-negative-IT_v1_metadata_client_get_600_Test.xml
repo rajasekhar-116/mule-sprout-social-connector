@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<testsuites tests="1" time="28" name="/v1/metadata/client tests" failures="0" errors="0">
+  <testsuite tests="1" time="28" name="/v1/metadata/client tests" failures="0" skipped="0" errors="0">
+    <testcase name="/v1/metadata/client - GET Successful Execution" time="16" status="OK"/>
+  </testsuite>
+</testsuites>
